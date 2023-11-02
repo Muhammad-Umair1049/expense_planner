@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 import 'package:flutter_complete_guide/Models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
-  @override
   final List<Transaction> transactions;
   TransactionList(this.transactions);
 
