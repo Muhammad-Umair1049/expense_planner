@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Widgets/new_transaction.dart';
-import 'Widgets/transaction_list.dart';
-import 'Models/transaction.dart';
+import 'package:flutter_complete_guide/widgets/auth_screens/sign_in.dart';
+import 'widgets/new_transaction.dart';
+import 'widgets/transaction_list.dart';
+import 'models/transaction.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,11 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Personal Expenses',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: MyHomePage(
         key: const Key('MyHomePage'), // Adding the named 'key' parameter here
       ),
+      // home: SignIn(),
     );
   }
 }

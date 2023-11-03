@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_complete_guide/Models/transaction.dart';
+import 'package:flutter_complete_guide/models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
   @override
