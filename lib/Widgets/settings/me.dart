@@ -13,7 +13,6 @@ class _HelloScreenState extends State<HelloScreen> {
         preferredSize: Size.fromHeight(80.0),
         child: InkWell(
           onTap: () {
-            // Show a SnackBar with the message "Hello" when the app bar is tapped.
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('Hello'),
@@ -66,23 +65,7 @@ class _HelloScreenState extends State<HelloScreen> {
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Hello',
-              style: TextStyle(fontSize: 24),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Add your custom logic here
-              },
-              child: Text('Change Greeting'),
-            ),
-          ],
-        ),
-      ),
+      body: Container(), // An empty container as the body
     );
   }
 }
