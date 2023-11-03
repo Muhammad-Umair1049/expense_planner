@@ -17,11 +17,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Personal Expenses',
-      theme: ThemeData(primarySwatch: Colors.green),
+      theme: ThemeData(primarySwatch: Colors.yellow),
       // home: MyHomePage(
       //   key: const Key('MyHomePage'), // Adding the named 'key' parameter here
       // ),
-      home: homePage(),
+      home: HelloScreen(),
+      // theme: ThemeData(primarySwatch: Colors.purple),
+      // home: MyHomePage(
+      //   key: const Key('MyHomePage'), // Adding the named 'key' parameter here
+      // ),
+      //home: MoneyManagerFrontPage(),
     );
   }
 }

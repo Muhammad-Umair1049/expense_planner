@@ -10,10 +10,9 @@ class _HelloScreenState extends State<HelloScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.0),
+        preferredSize: Size.fromHeight(100.0),
         child: InkWell(
           onTap: () {
-            // Show a SnackBar with the message "Hello" when the app bar is tapped.
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('Hello'),
@@ -28,11 +27,19 @@ class _HelloScreenState extends State<HelloScreen> {
             ),
             title: Row(
               children: [
-                CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  foregroundColor: Colors.white,
-                  radius: 30,
-                  child: Icon(Icons.person, size: 32),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.grey,
+                      foregroundColor: Colors.white,
+                      radius: 30,
+                      child: Icon(Icons.person, size: 32),
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                  ],
                 ),
                 SizedBox(width: 12),
                 Column(
@@ -43,7 +50,7 @@ class _HelloScreenState extends State<HelloScreen> {
                       child: Text(
                         'Sign In',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
@@ -66,22 +73,48 @@ class _HelloScreenState extends State<HelloScreen> {
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Hello',
-              style: TextStyle(fontSize: 24),
+      body: Column(
+        children: [
+          SizedBox(height: 20),
+          Center(
+            child: Container(
+              width: 300.0,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Add your custom logic here for the Premium button
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                ),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.star, // Replace with your crown icon
+                        color: Colors.orange, // Icon color
+                        size: 24, // Icon size
+                      ),
+                    ),
+                    Text(
+                      'Premium Member',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Spacer(), // Adds spacing to push the ">" icon to the right
+                    Icon(
+                      Icons.chevron_right, // ">" icon
+                      size: 24,
+                    ),
+                  ],
+                ),
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                // Add your custom logic here
-              },
-              child: Text('Change Greeting'),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
