@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/Widgets/settings/me.dart';
-import 'package:flutter_complete_guide/widgets/auth_screens/sign_in.dart';
+import 'widgets/settings/me.dart';
+import 'widgets/auth_screens/sign_in.dart';
 import 'widgets/new_transaction.dart';
 import 'widgets/transaction_list.dart';
 import 'models/transaction.dart';
-import 'Widgets/frontPage.dart';
+import 'screens/homePage.dart';
+import 'Models/rive.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 // main
 void main() => runApp(MyApp());
@@ -108,11 +110,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () => _startAddNewTransaction(context),
-      ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.add),
+      //   onPressed: () => _startAddNewTransaction(context),
+      // ),
     );
   }
 }
