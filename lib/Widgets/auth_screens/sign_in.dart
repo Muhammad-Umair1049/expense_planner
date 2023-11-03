@@ -95,10 +95,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 }
               },
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Sign in'),
-            )
+            GoogleSignInButton(onPressed: () {}),
           ],
         ),
       ),
@@ -191,3 +188,23 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 }
  */
+
+class GoogleSignInButton extends StatelessWidget {
+  final VoidCallback onPressed;
+
+  const GoogleSignInButton({Key? key, required this.onPressed})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton.icon(
+      onPressed: onPressed,
+      icon: Image.asset('assets/images/google_icon.png'),
+      label: Text('Sign in with Google'),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.white,
+        minimumSize: Size(double.infinity, 50),
+      ),
+    );
+  }
+}
