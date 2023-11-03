@@ -3,6 +3,7 @@ import 'package:flutter_complete_guide/widgets/auth_screens/sign_in.dart';
 import 'widgets/new_transaction.dart';
 import 'widgets/transaction_list.dart';
 import 'models/transaction.dart';
+
 // main
 void main() => runApp(MyApp());
 
