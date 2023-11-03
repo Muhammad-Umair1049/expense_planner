@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(
       //   key: const Key('MyHomePage'), // Adding the named 'key' parameter here
       // ),
-      // home: MoneyManagerFrontPage(),
+      //home: MoneyManagerFrontPage(),
     );
   }
 }
