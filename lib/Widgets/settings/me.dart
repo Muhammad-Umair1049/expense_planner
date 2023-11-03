@@ -6,8 +6,138 @@ class HelloScreen extends StatefulWidget {
 }
 
 class _HelloScreenState extends State<HelloScreen> {
-  @override
   Widget build(BuildContext context) {
+    // Function to show a modal bottom sheet
+    void _showModalBottomSheet(BuildContext context) {
+      showModalBottomSheet(
+        context: context,
+        builder: (_) {
+          return Column(
+            children: [
+              // App Bar with a "Settings" heading
+              AppBar(
+                title: Text('Settings'),
+              ),
+              // Profile button
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Add your logic for the Profile button here
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.person,
+                          color: Colors.black,
+                          size: 24,
+                        ),
+                      ),
+                      Text(
+                        'Profile',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.chevron_right,
+                        size: 24,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // Themes button
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Add your logic for the Themes button here
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.color_lens,
+                          color: Colors.black,
+                          size: 24,
+                        ),
+                      ),
+                      Text(
+                        'Themes',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.chevron_right,
+                        size: 24,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // Font Size button
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Add your logic for the Font Size button here
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.format_size,
+                          color: Colors.black,
+                          size: 24,
+                        ),
+                      ),
+                      Text(
+                        'Font Size',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.chevron_right,
+                        size: 24,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
+      );
+    }
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),
@@ -98,6 +228,45 @@ class _HelloScreenState extends State<HelloScreen> {
                     ),
                     Text(
                       'Premium Member',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Spacer(), // Adds spacing to push the ">" icon to the right
+                    Icon(
+                      Icons.chevron_right, // ">" icon
+                      size: 24,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 10), // Add some spacing
+          Center(
+            child: Container(
+              width: 300.0,
+              child: ElevatedButton(
+                onPressed: () {
+                  _showModalBottomSheet(context);
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                ),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.settings, // Replace with your icon
+                        color: Colors.orangeAccent, // Icon color
+                        size: 24, // Icon size
+                      ),
+                    ),
+                    Text(
+                      'Settings',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
