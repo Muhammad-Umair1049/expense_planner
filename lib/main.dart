@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Screens/home_page.dart';
-// import 'screens/me.dart';
+// import 'Screens/me_section.dart';
 // import 'screens/sign_in.dart';
 
 // main
@@ -12,8 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Personal Expenses',
-      theme: ThemeData(primarySwatch: Colors.yellow),
-      home: HomePage(), //Only change this for screens like SignIn() or Me()
+      theme: ThemeData(primarySwatch: Colors.amber),
+      home:
+          HomePage(), //Only change this for testing screens like SignIn() or Me()
     );
   }
 }
