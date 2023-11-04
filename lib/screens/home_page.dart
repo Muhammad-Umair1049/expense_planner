@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../Models/transaction.dart';
+//import '../Widgets/transaction_list.dart';
+import '../Widgets/new_transaction.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -75,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text("CHART!"),
               ),
             ),
-            TransactionList(_userTransactions),
+            //TransactionList(_userTransactions),
           ],
         ),
       ),
@@ -86,14 +89,14 @@ class _HomePageState extends State<HomePage> {
       // ),
       bottomNavigationBar: CurvedNavigationBar(
         animationDuration: Duration(milliseconds: 250),
-        onTap: (index) {
-          if (index == 0) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomePage()),
-            );
-          }
-        },
+        // onTap: (index) {
+        //   if (index == 0) {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => HomePage()),
+        //     );
+        //   }
+        // },
         items: [
           Icon(Icons.document_scanner_rounded),
           Icon(Icons.add_box_rounded),
