@@ -1,4 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/screens/auth.dart';
+import 'package:flutter_complete_guide/widgets/auth_screens/login_page.dart';
+
+import '../../services/auth_service.dart';
 
 class HelloScreen extends StatefulWidget {
   @override
@@ -138,11 +143,18 @@ class _HelloScreenState extends State<HelloScreen> {
       );
     }
 
+    AuthService authService = AuthService();
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),
         child: InkWell(
           onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AuthPage(),
+              ),
+            );
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('Hello'),
@@ -160,12 +172,46 @@ class _HelloScreenState extends State<HelloScreen> {
                 Stack(
                   alignment: Alignment.center,
                   children: [
-                    CircleAvatar(
+                    // I added this code to dynamically change the profile pic according to changes in accounts
+                    StreamBuilder<User?>(
+                      stream: authService.auth.authStateChanges(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.active) {
+                          if (snapshot.hasData) {
+                            // User is logged in, return the circular profile picture
+                            return CircleAvatar(
+                              backgroundColor: Colors.grey,
+                              foregroundColor: Colors.white,
+                              radius: 30,
+                              child: ClipOval(
+                                child: Image.network(
+                                  snapshot.data!.photoURL ?? '',
+                                  width: 60,
+                                  height: 60,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            );
+                          } else {
+                            // User is logged out, return the default icon or a sign-in button
+                            return Icon(Icons.account_circle, size: 60);
+                          }
+                        } else {
+                          // You can return a loading indicator or any other widget while the connection state is not active
+                          return CircularProgressIndicator();
+                        }
+                      },
+                    ),
+
+                    /* CircleAvatar(
                       backgroundColor: Colors.grey,
                       foregroundColor: Colors.white,
                       radius: 30,
-                      child: Icon(Icons.person, size: 32),
-                    ),
+                      // child: Icon(Icons.person, size: 32),
+                      child: ClipOval(
+                        child: authService.getProfilePic(),
+                      )
+                    ),*/
                     SizedBox(
                       height: 12,
                     ),

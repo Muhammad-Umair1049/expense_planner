@@ -46,7 +46,10 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(
       //   key: const Key('MyHomePage'), // Adding the named 'key' parameter here
       // ),
-      home: AuthPage(),
+      // home: AuthPage(),
+      home: HelloScreen(),
+
+
       // theme: ThemeData(primarySwatch: Colors.purple),
       // home: MyHomePage(
       //   key: const Key('MyHomePage'), // Adding the named 'key' parameter here
