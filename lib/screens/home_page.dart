@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/screens/me.dart';
 import '../Models/transaction.dart';
 //import '../Widgets/transaction_list.dart';
 import '../Widgets/new_transaction.dart';
@@ -88,6 +89,9 @@ class _HomePageState extends State<HomePage> {
       //   onPressed: () => _startAddNewTransaction(context),
       // ),
       bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.blue,
+        color: Colors.white,
+        buttonBackgroundColor: Colors.white,
         animationDuration: Duration(milliseconds: 250),
         // onTap: (index) {
         //   if (index == 0) {
@@ -97,11 +101,27 @@ class _HomePageState extends State<HomePage> {
         //     );
         //   }
         // },
+
         items: [
-          Icon(Icons.document_scanner_rounded),
-          Icon(Icons.add_box_rounded),
-          Icon(Icons.account_circle_rounded)
+          Icon(
+            Icons.document_scanner_rounded,
+          ),
+          Icon(
+            Icons.add_box_rounded,
+          ),
+          Icon(
+            Icons.account_circle_rounded,
+          )
         ],
+        onTap: (index) {
+          if (index == 2) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => HelloScreen(),
+              ),
+            );
+          }
+        },
       ),
     );
   }
