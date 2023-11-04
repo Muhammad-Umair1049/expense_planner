@@ -5,8 +5,6 @@ import 'widgets/new_transaction.dart';
 import 'widgets/transaction_list.dart';
 import 'models/transaction.dart';
 import 'screens/homePage.dart';
-import 'Models/rive.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 // main
 void main() => runApp(MyApp());
@@ -21,12 +19,7 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(
       //   key: const Key('MyHomePage'), // Adding the named 'key' parameter here
       // ),
-      home: HelloScreen(),
-      // theme: ThemeData(primarySwatch: Colors.purple),
-      // home: MyHomePage(
-      //   key: const Key('MyHomePage'), // Adding the named 'key' parameter here
-      // ),
-      //home: MoneyManagerFrontPage(),
+      home: homePage(),
     );
   }
 }
