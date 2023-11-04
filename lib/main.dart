@@ -1,4 +1,9 @@
+import 'dart:io';
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/screens/auth.dart';
+import 'package:flutter_complete_guide/widgets/auth_screens/login_page.dart';
 import 'widgets/settings/me.dart';
 import 'widgets/auth_screens/sign_in.dart';
 import 'widgets/new_transaction.dart';
@@ -8,8 +13,28 @@ import 'screens/homePage.dart';
 import 'Models/rive.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-// main
-void main() => runApp(MyApp());
+//AIzaSyCY9AzhXJbjSSPnYhv6UTTXG0y5wTbOiZY
+//1:1036775824586:android:43bb5149656fe235b0a833
+//1036775824586
+//expense-tracker-flutter-251e2
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  Platform.isAndroid
+      ? await Firebase.initializeApp(
+          options: FirebaseOptions(
+            apiKey: "AIzaSyCY9AzhXJbjSSPnYhv6UTTXG0y5wTbOiZY",
+            appId: "1:1036775824586:android:43bb5149656fe235b0a833",
+            messagingSenderId: "1036775824586",
+            projectId: "expense-tracker-flutter-251e2",
+          ),
+        )
+      : await Firebase.initializeApp();
+  runApp(MyApp());
+}
+// void main() {
+//   runApp(MyApp());
+// }
 
 class MyApp extends StatelessWidget {
   @override
@@ -21,12 +46,12 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(
       //   key: const Key('MyHomePage'), // Adding the named 'key' parameter here
       // ),
-      home: HelloScreen(),
+      home: AuthPage(),
       // theme: ThemeData(primarySwatch: Colors.purple),
       // home: MyHomePage(
       //   key: const Key('MyHomePage'), // Adding the named 'key' parameter here
       // ),
-      //home: MoneyManagerFrontPage(),
+      // home: MoneyManagerFrontPage(),
     );
   }
 }
