@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  // Adding the named 'key' parameter here
   MyHomePage({Key? key}) : super(key: key);
 
   @override
