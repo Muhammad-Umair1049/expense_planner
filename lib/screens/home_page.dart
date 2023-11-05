@@ -58,14 +58,29 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Personal Expenses'),
+        leading: IconButton(
+          icon: Icon(Icons.search_rounded),
+          onPressed: () {
+            // Add your search action here
+          },
+        ),
+        title: Center(
+          child: Text(
+            'Personal Expenses',
+            style: TextStyle(
+              fontSize: 16,
+            ),
+          ),
+        ),
         actions: [
           IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () => _startAddNewTransaction(context),
-          ),
+              icon: Icon(Icons.calendar_month_rounded),
+              onPressed: () {
+                // Add your calendar action here
+              }),
         ],
       ),
+
       body: SingleChildScrollView(
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.start,
