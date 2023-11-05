@@ -56,4 +56,28 @@ class AuthService {
       return Icon(Icons.account_circle, size: 60);
     }
   }
+
+  // to set profile name of a person
+  Widget getProfileName() {
+    if (auth.currentUser!.displayName != null) {
+      return Text(
+        auth.currentUser!.displayName!,
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+      );
+    } else {
+      return const Text('Anonymous');
+    }
+  }
+
+  // to get profile email of a person
+  Widget getProfileEmail() {
+    if (auth.currentUser!.email != null) {
+      return Text(
+        auth.currentUser!.email!,
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+      );
+    } else {
+      return const Text('johndoe@gmail.com');
+    }
+  }
 }
