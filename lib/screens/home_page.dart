@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/screens/me.dart';
+import './me.dart';
 import '../models/transaction.dart';
 import '../widgets/transaction_list.dart';
 import '../Widgets/new_transaction.dart';
@@ -59,7 +59,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.search_rounded),
+          icon: Icon(
+            Icons.search_rounded,
+            size: 25,
+          ),
           onPressed: () {
             // Add your search action here
           },
@@ -74,13 +77,14 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
-              icon: Icon(
-                Icons.calendar_month_outlined,
-                size: 20,
-              ),
-              onPressed: () {
-                // Add your calendar action here
-              }),
+            icon: Icon(
+              Icons.calendar_month_outlined,
+              size: 25,
+            ),
+            onPressed: () {
+              // Add your calendar action here
+            },
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -116,6 +120,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Icon(
                 Icons.document_scanner_rounded,
+                size: 25,
               ),
               Text("Records", style: TextStyle(fontSize: 12)),
             ],
@@ -134,6 +139,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Icon(
                 Icons.account_circle_rounded,
+                size: 25,
               ),
               Text("Me", style: TextStyle(fontSize: 12)),
             ],

@@ -9,7 +9,7 @@ ThemeData lightTheme = ThemeData(
   ),
   brightness: Brightness.light,
   primarySwatch: COLOR_PRIMARY,
-  iconTheme: IconThemeData(color: Colors.black54),
+  iconTheme: IconThemeData(color: Colors.black87),
 );
 
 ThemeData darkTheme = ThemeData(
