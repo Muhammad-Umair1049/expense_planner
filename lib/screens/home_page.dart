@@ -66,21 +66,23 @@ class _HomePageState extends State<HomePage> {
         ),
         title: Center(
           child: Text(
-            'Personal Expenses',
+            'Expense Manager',
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 20,
             ),
           ),
         ),
         actions: [
           IconButton(
-              icon: Icon(Icons.calendar_month_rounded),
+              icon: Icon(
+                Icons.calendar_month_outlined,
+                size: 20,
+              ),
               onPressed: () {
                 // Add your calendar action here
               }),
         ],
       ),
-
       body: SingleChildScrollView(
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.start,
@@ -98,38 +100,51 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      // floatingActionButton: FloatingActionButton(
-      //   child: Icon(Icons.add),
-      //   onPressed: () => _startAddNewTransaction(context),
-      // ),
+      //Bottom Navigation Bar all functionality is added in this function
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.amber,
+        // I use the package from PUB.dev "curved_navigation_bar"
+        backgroundColor: Colors
+            .amber, // You can change the color of the bottom navigation bar
         color: Colors.white,
         buttonBackgroundColor: Colors.white,
-        animationDuration: Duration(milliseconds: 250),
-        // onTap: (index) {
-        //   if (index == 0) {
-        //     Navigator.push(
-        //       context,
-        //       MaterialPageRoute(builder: (context) => HomePage()),
-        //     );
-        //   }
-        // },
-
+        height: 60,
+        animationDuration:
+            Duration(milliseconds: 250), // You can change the animation speed
         items: [
-          Icon(
-            Icons.document_scanner_rounded,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.document_scanner_rounded,
+              ),
+              Text("Records", style: TextStyle(fontSize: 12)),
+            ],
           ),
-          Icon(
-            Icons.add_box_rounded,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.add_circle_outline_outlined,
+                size: 50,
+              ),
+            ],
           ),
-          Icon(
-            Icons.account_circle_rounded,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.account_circle_rounded,
+              ),
+              Text("Me", style: TextStyle(fontSize: 12)),
+            ],
           )
         ],
         onTap: (index) {
-          if (index == 2) {
+          // onpresssed function like if user tap on add icon then it will open the add transaction bottom sheet
+          if (index == 1) {
+            _startAddNewTransaction(context);
+          } else if (index == 2) {
+            // if user tap on account icon then it will open the me.dart screen
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => HelloScreen(),
