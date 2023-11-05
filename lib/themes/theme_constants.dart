@@ -11,5 +11,5 @@ ThemeData lightTheme = ThemeData(
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   primarySwatch: COLOR_PRIMARY,
-  iconTheme: IconThemeData(color: Colors.black),
+  iconTheme: IconThemeData(color: Colors.amber),
 );

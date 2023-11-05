@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/screens/me.dart';
-import '../Models/transaction.dart';
-//import '../Widgets/transaction_list.dart';
+import '../models/transaction.dart';
+import '../widgets/transaction_list.dart';
 import '../Widgets/new_transaction.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text("CHART!"),
               ),
             ),
-            //TransactionList(_userTransactions),
+            TransactionList(_userTransactions),
           ],
         ),
       ),
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
       //   onPressed: () => _startAddNewTransaction(context),
       // ),
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.amber,
         color: Colors.white,
         buttonBackgroundColor: Colors.white,
         animationDuration: Duration(milliseconds: 250),
