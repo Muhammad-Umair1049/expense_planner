@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/screens/me_screen/auth.dart';
 import '../../services/auth_service.dart';
 import '../../widgets/modal_bottom_sheets.dart';
+import 'me_modal_bottom_sheet.dart';
 
 class HelloScreen extends StatefulWidget {
   @override
@@ -12,6 +13,21 @@ class HelloScreen extends StatefulWidget {
 class _HelloScreenState extends State<HelloScreen> {
   AuthService authService = AuthService();
 
+
+  /*bool isLoggingOut = false;
+  Future<void> handleLogout() async {
+    setState(() {
+      isLoggingOut = true;
+    });
+
+    await authService.handleSignOut(); // Call your logout method
+
+    setState(() {
+      isLoggingOut = false;
+    });
+  }*/
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
@@ -24,7 +40,7 @@ class _HelloScreenState extends State<HelloScreen> {
                 builder: (context) => AuthPage(),
               ),
             );
-            // show snackbar message
+            // show snackbar message that the user pressed on appbar
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('Hello'),
@@ -37,14 +53,6 @@ class _HelloScreenState extends State<HelloScreen> {
                 bottom: Radius.circular(20),
               ),
             ),
-
-            /* // Handle back arrow press to return to HomePage
-              leading: IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),*/
 
             title: StreamBuilder<User?>(
               stream: authService.auth.authStateChanges(),
@@ -93,9 +101,18 @@ class _HelloScreenState extends State<HelloScreen> {
                             color: Colors.black,
                           ),
                           onPressed: () {
-                            authService.handleSignOut();
+                            authService.handleSignOut();    // user sign out functionality here
                           },
                         ),
+                       /* isLoggingOut
+                            ? CircularProgressIndicator()
+                            : IconButton(
+                          icon: Icon(
+                            Icons.logout,
+                            color: Colors.black,
+                          ),
+                          onPressed: handleLogout,
+                        ),*/
                       ],
                     );
                   } else {
@@ -104,7 +121,7 @@ class _HelloScreenState extends State<HelloScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         CircleAvatar(
-                          backgroundColor: Colors.grey,
+                          backgroundColor: Colors.black54,
                           foregroundColor: Colors.white,
                           radius: 30,
                           child: ClipOval(
@@ -119,18 +136,20 @@ class _HelloScreenState extends State<HelloScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              user?.displayName ?? "Anonymous",
+                              // user?.displayName ?? "Anonymous",
+                              "Sign In",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 14),
                             ),
                             Text(
-                              user?.email ?? "johndoe@gmail.com",
+                              // user?.email ?? "johndoe@gmail.com",
+                              "Can't wait, Signing In!",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 12),
                             ),
                           ],
                         ),
-                        Spacer(),
+                        /* Spacer(),
                         Column(
                           children: [
                             IconButton(
@@ -150,7 +169,7 @@ class _HelloScreenState extends State<HelloScreen> {
                                   fontSize: 12),
                             ),
                           ],
-                        ),
+                        ),*/
                       ],
                     );
                     // return Text("Not logged in");
