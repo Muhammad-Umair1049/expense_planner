@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/main.dart';
-import 'package:flutter_complete_guide/widgets/themedButtons.dart';
+import 'package:flutter_complete_guide/widgets/themed_buttons.dart';
 
 void showThemesBottomSheet(BuildContext context) {
   showModalBottomSheet(

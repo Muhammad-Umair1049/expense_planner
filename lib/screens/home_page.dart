@@ -1,12 +1,9 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import '../models/transaction.dart';
-import '../services/auth_service.dart';
 import '../widgets/new_transaction.dart';
-import 'me.dart';
 import '../widgets/transaction_list.dart';
+import 'me_screen/me.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -116,7 +113,7 @@ class _HomePageState extends State<HomePage> {
         buttonBackgroundColor: Colors.white,
         height: 60,
         animationDuration:
-        Duration(milliseconds: 250), // You can change the animation speed
+            Duration(milliseconds: 250), // You can change the animation speed
         items: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,

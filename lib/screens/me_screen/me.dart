@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/screens/auth.dart';
-import '../services/auth_service.dart';
-import '../widgets/ModalBottomSheets.dart';
+import 'package:flutter_complete_guide/screens/me_screen/auth.dart';
+import '../../services/auth_service.dart';
+import '../../widgets/modal_bottom_sheets.dart';
 
 class HelloScreen extends StatefulWidget {
   @override
