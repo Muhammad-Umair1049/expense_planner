@@ -8,37 +8,6 @@ import '../widgets/new_transaction.dart';
 import 'me.dart';
 import '../widgets/transaction_list.dart';
 
-/*class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    AuthService authService = AuthService();
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: authService.handleSignOut,
-            icon: Icon(Icons.logout),
-          ),
-        ],
-        centerTitle: true,
-        title: const Text('Home Screen'),
-      ),
-      body: Center(
-        child: Text(FirebaseAuth.instance.currentUser!.email.toString()),
-      ),
-    );
-  }
-}*/
-
-
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 

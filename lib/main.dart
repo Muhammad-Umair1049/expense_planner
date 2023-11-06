@@ -6,10 +6,11 @@ import 'package:flutter_complete_guide/screens/homePage.dart';
 import 'package:flutter_complete_guide/themes/theme_constants.dart';
 import 'package:flutter_complete_guide/themes/theme_manager.dart';
 
-//AIzaSyCY9AzhXJbjSSPnYhv6UTTXG0y5wTbOiZY
-//1:1036775824586:android:43bb5149656fe235b0a833
-//1036775824586
-//expense-tracker-flutter-251e2
+// These are important lines related to firebase present in Android app [google-serivces.json]
+/*AIzaSyCY9AzhXJbjSSPnYhv6UTTXG0y5wTbOiZY
+1:1036775824586:android:43bb5149656fe235b0a833
+1036775824586
+expense-tracker-flutter-251e2*/
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
