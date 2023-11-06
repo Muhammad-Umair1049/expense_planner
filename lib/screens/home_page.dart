@@ -13,6 +13,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // To check for Dark or light Mode
+
   final List<Transaction> _userTransactions = [
     Transaction(
       id: "t1",
@@ -56,6 +58,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -87,6 +91,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+
       body: SingleChildScrollView(
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.start,
@@ -106,11 +111,12 @@ class _HomePageState extends State<HomePage> {
       ),
       //Bottom Navigation Bar all functionality is added in this function
       bottomNavigationBar: CurvedNavigationBar(
-        // I use the package from PUB.dev "curved_navigation_bar"
-        backgroundColor: Colors
-            .amber, // You can change the color of the bottom navigation bar
-        color: Colors.white,
-        buttonBackgroundColor: Colors.white,
+        // I use the package from PUB.dev "curved_navigation_bar
+        // You can change the color of the bottom navigation bar
+        backgroundColor: isDarkMode ? Colors.white : Colors.amber,
+        color: isDarkMode ? Color.fromARGB(255, 77, 76, 76) : Colors.white,
+        buttonBackgroundColor:
+            isDarkMode ? Color.fromARGB(255, 77, 76, 76) : Colors.white,
         height: 60,
         animationDuration:
             Duration(milliseconds: 250), // You can change the animation speed
@@ -120,9 +126,15 @@ class _HomePageState extends State<HomePage> {
             children: [
               Icon(
                 Icons.document_scanner_rounded,
+                color: isDarkMode ? Colors.white : Colors.black,
                 size: 25,
               ),
-              Text("Records", style: TextStyle(fontSize: 12)),
+              Text(
+                "Records",
+                style: TextStyle(
+                    fontSize: 12,
+                    color: isDarkMode ? Colors.white : Colors.black),
+              ),
             ],
           ),
           Column(
@@ -130,6 +142,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Icon(
                 Icons.add_circle_outline_outlined,
+                color: isDarkMode ? Colors.white : Colors.black,
                 size: 50,
               ),
             ],
@@ -139,9 +152,15 @@ class _HomePageState extends State<HomePage> {
             children: [
               Icon(
                 Icons.account_circle_rounded,
+                color: isDarkMode ? Colors.white : Colors.black,
                 size: 25,
               ),
-              Text("Me", style: TextStyle(fontSize: 12)),
+              Text(
+                "Me",
+                style: TextStyle(
+                    fontSize: 12,
+                    color: isDarkMode ? Colors.white : Colors.black),
+              ),
             ],
           )
         ],

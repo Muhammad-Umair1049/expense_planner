@@ -31,7 +31,7 @@ class _ThemeSelectionWidgetState extends State<ThemeSelectionWidget> {
         ),
         themedButton(
           'Light Theme',
-              () {
+          () {
             setState(() {
               selectedTheme = 'Light Theme';
             });
@@ -40,7 +40,7 @@ class _ThemeSelectionWidgetState extends State<ThemeSelectionWidget> {
         ),
         themedButton(
           'Dark Theme',
-              () {
+          () {
             setState(() {
               selectedTheme = 'Dark Theme';
             });

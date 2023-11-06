@@ -13,9 +13,6 @@ class BotNavBarState extends State<BotNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.white,
-        color: Colors.amber,
-        buttonBackgroundColor: Colors.amber,
         height: 50,
         items: const <Widget>[
           Icon(Icons.home, size: 30),
