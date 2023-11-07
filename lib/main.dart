@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_complete_guide/screens/home_page.dart';
 import 'package:flutter_complete_guide/themes/theme_constants.dart';
 import 'package:flutter_complete_guide/themes/theme_manager.dart';
@@ -14,6 +15,10 @@ expense-tracker-flutter-251e2*/
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent, // Set the status bar color to transparent
+  ));
+  
   Platform.isAndroid
       ? await Firebase.initializeApp(
           options: FirebaseOptions(
@@ -61,11 +66,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Personal Expenses',
+
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeManager.themeMode,
-      home:
-          HomePage(), //Only change this for testing screens like SignIn() or Me()
+      home:  HomePage(), 
     );
   }
 }

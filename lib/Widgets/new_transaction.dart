@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class NewTransaction extends StatefulWidget {
   final Function addTx;
-
   NewTransaction(this.addTx);
 
   @override
@@ -11,20 +10,19 @@ class NewTransaction extends StatefulWidget {
 
 class _NewTransactionState extends State<NewTransaction> {
   final titleController = TextEditingController();
-
   final amountController = TextEditingController();
 
   void SubmitData() {
     final enteredTitle = titleController.text;
-    final eneterdAmount = double.parse(amountController.text);
+    final enteredAmount = double.parse(amountController.text);
 
-    if (enteredTitle.isEmpty || eneterdAmount <= 0) {
+    if (enteredTitle.isEmpty || enteredAmount <= 0) {
       return;
     }
 
     widget.addTx(
       enteredTitle,
-      eneterdAmount,
+      enteredAmount,
     );
 
     Navigator.of(context).pop();

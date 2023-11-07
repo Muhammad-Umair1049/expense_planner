@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/screens/me_screen/auth.dart';
 import '../../services/auth_service.dart';
 import '../../widgets/modal_bottom_sheets.dart';
-import 'me_modal_bottom_sheet.dart';
 
 class HelloScreen extends StatefulWidget {
   @override
