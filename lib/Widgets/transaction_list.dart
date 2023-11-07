@@ -33,7 +33,7 @@ class TransactionList extends StatelessWidget {
                     // string Interpolation, another way = tx.amount.toString()
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.purple,
+                      color: Colors.black,
                     ),
                   ),
                 ),

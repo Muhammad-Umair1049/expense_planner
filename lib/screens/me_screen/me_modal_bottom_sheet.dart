@@ -3,9 +3,7 @@ import 'package:flutter_complete_guide/services/auth_service.dart';
 import 'package:lottie/lottie.dart';
 
 void showCustomFullScreenModal(BuildContext context) {
-
   AuthService auth = AuthService();
-
 
   showModalBottomSheet(
     context: context,
@@ -23,7 +21,7 @@ void showCustomFullScreenModal(BuildContext context) {
               Container(
                 height: MediaQuery.of(context).size.height * 0.3,
                 decoration: const BoxDecoration(
-                  color: Colors.yellow, // Yellow background color
+                  color: Colors.amber, // Yellow background color
                   borderRadius: BorderRadius.vertical(
                     bottom: Radius.circular(
                       50,
@@ -98,9 +96,10 @@ void showCustomFullScreenModal(BuildContext context) {
                         const Text(
                           'Note: This is a new app launched in November 2023, not the app with the same name that has been removed from the Google Play. Please pay attention!',
                           style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400,),
+                            fontSize: 16,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                         const SizedBox(height: 30),
                         ElevatedButton(
@@ -109,7 +108,7 @@ void showCustomFullScreenModal(BuildContext context) {
                             auth.handleSignIn();
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.grey, // Background color
+                            primary: Colors.grey.shade200, // Background color
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(
                                 28.0,
@@ -124,8 +123,8 @@ void showCustomFullScreenModal(BuildContext context) {
                               children: [
                                 Image.asset(
                                   'assets/google.png',
-                                  height: 30,
-                                  width: 30,
+                                  height: 25,
+                                  width: 25,
                                 ),
                                 const Text(
                                   'Sign In With Google',
@@ -166,15 +165,15 @@ void showCustomFullScreenModal(BuildContext context) {
                                   'Terms of Use',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w700,
-                                    color: Colors.yellow[300],
+                                    color: Colors.amber.shade500,
                                     letterSpacing: 1,
                                   ),
                                 ),
                                 Text(
                                   'Privacy Policy',
                                   style: TextStyle(
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.yellow[300],
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.amber.shade500,
                                     letterSpacing: 1,
                                   ),
                                 ),
